@@ -4,7 +4,7 @@
 
 flowchart TD
     %% ==== Entry point ==================================================
-    Start(\[Start: python pdf_table_marker.py PDF \[page\]\])
+    Start(Start: python pdf_table_marker.py PDF page)
 
     %% ==== 1️⃣ Load PDF & render page =====================================
     subgraph LoadAndRender ["1️⃣ Load PDF & render page"]
