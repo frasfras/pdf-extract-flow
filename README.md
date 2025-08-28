@@ -7,7 +7,7 @@ flowchart TD
     Start(Start: python pdf_table_marker.py PDF page)
 
     %% ==== 1️⃣ Load PDF & render page =====================================
-    subgraph LoadAndRender ["1️⃣ Load PDF & render page"]
+    subgraph LoadAndRender ["1️⃣ Load PDF & render pag"]
         A1[Validate PDF path] --> A2[Open with pdfplumber]
         A2 --> A3{Is page_number valid?(1‑len(pages))}
         A3 -- Yes --> A4[Select page (0‑based index)]
