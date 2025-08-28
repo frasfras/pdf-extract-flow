@@ -48,7 +48,7 @@ flowchart TD
 
     %% ==== 5️⃣ Output JSON =====================================================
     subgraph Output["5️⃣ Output JSON"]
-        E1["Convert 2‑D list → dict {\"table\": [...]}"]
+        E1["Convert 2‑D list → dict {\table\: [...]}"]
         E2["json.dump(..., indent=2)"]
         E3["Write to <pdf_stem>_pageN.json (or stdout)"]
         E1 --> E2 --> E3
