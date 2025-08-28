@@ -12,7 +12,7 @@ flowchart TD
         A2 --> A3{Is page_number valid?'1‑len pages'}
         A3 -- Yes --> A4[Select page 0‑based index]
         A3 -- No --> A5[Raise ValueError & exit]
-        A4 --> A6['Render page to Pillow Image (150 dpi)']
+        A4 --> A6['Render page to Pillow Image 150 dpi']
         A6 --> A7[Return (pdfplumber.Page, PIL.Image)]
     end
 
