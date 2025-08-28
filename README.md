@@ -13,7 +13,7 @@ flowchart TD
         A3 -- Yes --> A4[Select page 0‑based index]
         A3 -- No --> A5[Raise ValueError & exit]
         A4 --> A6['Render page to Pillow Image 150 dpi']
-        A6 --> A7[Return (pdfplumber.Page, PIL.Image)]
+        A6 --> A7[Return pdfplumber.Page, PIL.Image]
     end
 
     %% ==== 2️⃣ Interactive line‑drawing UI ================================
@@ -24,20 +24,20 @@ flowchart TD
         B4 --> B5[Show instructions overlay]
         B5 --> B6[User draws lines:\n • press ‘v’ → vertical mode\n • press ‘h’ → horizontal mode\n • click‑drag → temp line\n • release → commit line\n • press ‘c’ → clear all\n • press ‘q’ → quit]\n
         B6 --> B7[Lines stored in:\n • vert_lines (x‑coords)\n • horiz_lines (y‑coords)]
-        B7 --> B8[Press <Enter> → close figure → exit UI loop]
+        B7 --> B8[Press Enter → close figure → exit UI loop]
     end
 
     %% ==== 3️⃣ Build grid from drawn separators ==========================
     subgraph BuildGrid ["3️⃣ Build grid from separators"]
-        C1[Combine user lines with page borders (0 & width/height)] --> C2[Sort vertical & horizontal coordinates]
-        C2 --> C3[Create cell boxes (Rectangles) from adjacent pairs]\n
+        C1[Combine user lines with page borders 0 & width/height] --> C2[Sort vertical & horizontal coordinates]
+        C2 --> C3[Create cell boxes Rectangles from adjacent pairs]\n
         C3 --> C4[Store grid as list of cell bounds (x0,x1,y0,y1)]
     end
 
     %% ==== 4️⃣ Extract cell contents ======================================
     subgraph Extract ["4️⃣ Extract cell contents"]
         D1[Iterate over each cell] --> D2[Crop cell region from pdfplumber.Page using bounds]
-        D2 --> D3[Use .extract_text() (or .within_bbox) to get string]
+        D2 --> D3[Use .extract_text or .within_bbox to get string]
         D3 --> D4[Append text to row list]
         D4 --> D5[When row complete → append to table list]
     end
