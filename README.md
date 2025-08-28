@@ -67,4 +67,5 @@ flowchart TD
 
     %% ==== Early‑exit paths (quit / clear) =====================================
     B6 -->|press ‘q’| End
-    B6 -->|press ‘c’| B4   %% clears lines, returns to drawing mode
+    B6 -->|press ‘c’| B4
+    %% clears lines, returns to drawing mode
