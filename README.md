@@ -1,9 +1,8 @@
 # pdf-extract-flow
-'mermaid
+```mermaid
 
 
 flowchart TD
-
     %% ==== Entry point ==================================================
     Start([Start: python pdf_table_marker.py <PDF> [page]])
 
