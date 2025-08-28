@@ -23,7 +23,7 @@ flowchart TD
         B3 --> B4[Attach callbacks:\n• button_press → on_press\n• button_release → on_release\n• motion_notify → on_move\n• key_press → on_key]
         B4 --> B5[Show instructions overlay]
         B5 --> B6[User draws lines:\n • press ‘v’ → vertical mode\n • press ‘h’ → horizontal mode\n • click‑drag → temp line\n • release → commit line\n • press ‘c’ → clear all\n • press ‘q’ → quit]\n
-        B6 --> B7 \n
+        B6 --> B7 [User draws lines:\n • press ‘v’ → vertical mode\n • press ‘h’ → horizontal mode\n • click‑drag → temp line\n • release → commit line\n • press ‘c’ → clear all\n • press ‘q’ → quit]\n
         B7 --> B8[Press Enter → close figure → exit UI loop]
     end
 
