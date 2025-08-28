@@ -9,7 +9,7 @@ flowchart TD
     %% ==== 1️⃣ Load PDF & render page =====================================
     subgraph LoadAndRender ["1️⃣ Load PDF & render page"]
         A1[Validate PDF path] --> A2[Open with pdfplumber]
-        A2 --> A3{Is page_number valid?<br/>(1‑len(pages))}
+        A2 --> A3{Is page_number valid?(1‑len(pages))}
         A3 -- Yes --> A4[Select page (0‑based index)]
         A3 -- No --> A5[Raise ValueError & exit]
         A4 --> A6[Render page to Pillow Image (150 dpi)]
@@ -45,7 +45,7 @@ flowchart TD
     %% ==== 5️⃣ Output JSON ================================================
     subgraph Output ["5️⃣ Output JSON"]
         E1[Convert table (list of rows) → Python dict] --> E2[json.dump(..., indent=2)]
-        E2 --> E3[Print to stdout OR write to <pdf_name>_pageN.json]
+        E2 --> E3[Print to stdout OR write to pdf_name_pageN.json]
     end
 
     %% ==== Error handling =================================================
